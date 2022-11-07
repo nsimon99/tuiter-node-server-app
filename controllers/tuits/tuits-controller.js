@@ -17,7 +17,8 @@ const findTuits = (req, res) =>
 
 
 const updateTuit = (req, res) => {
-    const tuitdIdToUpdate = req.params.tid;
+    const tuitdIdToUpdateString = req.params.tid;
+    const tuitdIdToUpdate = Number(tuitdIdToUpdateString);
     const updates = req.body;
     const tuitIndex = tuits.findIndex(
         (t) => t._id === tuitdIdToUpdate)
@@ -27,15 +28,13 @@ const updateTuit = (req, res) => {
 }
 
 
-
-
 const deleteTuit = (req, res) => {
-    const tuitdIdToDelete = req.params.tid;
+    const tuitdIdToDeleteString = req.params.tid;
+    const tuitdIdToDelete = Number(tuitdIdToDeleteString);
     tuits = tuits.filter((t) =>
         t._id !== tuitdIdToDelete);
     res.sendStatus(200);
 }
-
 
 
 
