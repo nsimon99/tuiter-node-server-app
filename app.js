@@ -18,7 +18,7 @@ TuitsController(app);
 HelloController(app);
 UserController(app);
 app.listen(process.env.PORT || 4000);
-
+/*
 import { createRequire } from 'module';
 
 const require = createRequire(import.meta.url);
@@ -32,4 +32,9 @@ client.connect(err => {
 });
 
 
+*/
+import mongoose from "mongoose";
 
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
+    || 'mongodb://localhost:27017/tuiter'
+mongoose.connect(CONNECTION_STRING);
