@@ -19,14 +19,14 @@ HelloController(app);
 UserController(app);
 app.listen(process.env.PORT || 4000);
 
-import mongoose from "mongoose";
-
-//const uri = encodeURIComponent("mongodb+srv://nehasimon:<kramer>@cluster0.ycn6rkn.mongodb.net/?retryWrites=true&w=majority");
-
-
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
-    || 'mongodb://localhost:27017/tuiter/';
-mongoose.connect(CONNECTION_STRING);
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = encodeURIComponent("mongodb+srv://nehasimon:<password>@cluster0.ycn6rkn.mongodb.net/?retryWrites=true&w=majority");
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+    const collection = client.db("test").collection("devices");
+    // perform actions on the collection object
+    client.close();
+});
 
 
 
