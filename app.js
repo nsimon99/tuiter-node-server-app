@@ -19,8 +19,11 @@ HelloController(app);
 UserController(app);
 app.listen(process.env.PORT || 4000);
 
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = encodeURIComponent("mongodb+srv://nehasimon:<password>@cluster0.ycn6rkn.mongodb.net/?retryWrites=true&w=majority");
+const uri = encodeURIComponent("mongodb+srv://nehasimon:<kramer>@cluster0.ycn6rkn.mongodb.net/?retryWrites=true&w=majority");
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 client.connect(err => {
     const collection = client.db("test").collection("devices");
