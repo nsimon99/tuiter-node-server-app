@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 const app = express();
 app.use(cors());
+import mongoose from "mongoose";
+mongoose.connect("mongodb+srv://nehasimon:<kramersweety1999>@cluster0.tbzhhbg.mongodb.net/?retryWrites=true&w=majority");
+
 
 import HelloController
     from "./controllers/hello-controller.js";
