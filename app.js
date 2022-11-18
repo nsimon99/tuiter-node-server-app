@@ -1,8 +1,11 @@
-import mongoose from "mongoose";
+/*import mongoose from "mongoose";
 
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
     || 'mongodb://localhost:27017/tuiter'
 mongoose.connect(CONNECTION_STRING);
+
+
+ */
 
 import express from 'express';
 import cors from 'cors';
@@ -20,5 +23,5 @@ app.use(express.json());
 TuitsController(app);
 HelloController(app);
 UserController(app);
-app.listen(process.env.PORT || 4000);
+app.listen(process.env.PORT || '4000');
 
