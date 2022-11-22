@@ -1,8 +1,5 @@
 import mongoose from "mongoose";
-
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
-    || 'mongodb://localhost:27017/tuiter'
-mongoose.connect(CONNECTION_STRING);
+mongoose.connect('mongodb+srv://nehasimon:kramer@cluster0.ycn6rkn.mongodb.net/?retryWrites=true&w=majority');
 
 
 

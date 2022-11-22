@@ -1,3 +1,4 @@
+
 import mongoose from 'mongoose';
 const schema = mongoose.Schema({
     tuit: String,
@@ -5,4 +6,3 @@ const schema = mongoose.Schema({
     liked: Boolean,
 }, {collection: 'tuits'});
 export default schema;
-
